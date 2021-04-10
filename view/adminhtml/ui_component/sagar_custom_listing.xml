@@ -57,11 +57,6 @@
                 </param>
             </childDefaults>
         </settings>
-        <selectionsColumn name="ids">
-            <settings>
-                <indexField>custom_entity_id</indexField>
-            </settings>
-        </selectionsColumn>
         <column name="custom_entity_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
