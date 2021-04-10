@@ -1,0 +1,31 @@
+{
+    "custom_data": {
+        "column": {
+            "custom_entity_id": true,
+            "town": true,
+            "uuid": true,
+            "property_type_id": true,
+            "county": true,
+            "country": true,
+            "address": true,
+            "description": true,
+            "image_full": true,
+            "image_thumbnail": true,
+            "type": true,
+            "latitude": true,
+            "longitude": true,
+            "num_bedrooms": true,
+            "num_bathrooms": true,
+            "price": true,
+            "created_at": true,
+            "updated_at": true,
+            "property_type_title": true,
+            "property_type_description": true,
+            "property_type_created_at": true,
+            "property_type_updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

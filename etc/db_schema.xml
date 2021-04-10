@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Sagar Parikh, All rights reserved.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="custom_data" resource="default" engine="innodb" comment="Sagar Custom">
+        <column xsi:type="smallint" name="custom_entity_id" padding="11" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="town" nullable="false" length="25" comment="Town"/>
+        <column xsi:type="varchar" name="uuid" nullable="false" length="255" comment="uuid"/>
+        <column xsi:type="smallint" name="property_type_id" nullable="false" padding="6" comment="Property Type Id"/>
+        <column xsi:type="varchar" name="county" nullable="false" length="25" comment="county"/>
+        <column xsi:type="varchar" name="country" nullable="false" length="25" comment="country"/>
+        <column xsi:type="varchar" name="address" nullable="false" length="255" comment="address"/>
+        <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Descrition"/>
+        <column xsi:type="varchar" name="image_full" nullable="false" length="255" comment="Image"/>
+        <column xsi:type="varchar" name="image_thumbnail" nullable="false" length="255" comment="Thumbnail"/>
+        <column xsi:type="varchar" name="type" nullable="false" length="255" comment="type"/>
+        <column xsi:type="decimal" name="latitude" nullable="false" scale="6" precision="10" comment="latitude"/>
+        <column xsi:type="decimal" name="longitude" nullable="false" scale="6" precision="10" comment="longitude"/>
+        <column xsi:type="smallint" name="num_bedrooms" nullable="false" padding="6" comment="bedrooms"/>
+        <column xsi:type="smallint" name="num_bathrooms" nullable="false" padding="6" comment="bathrooms"/>
+        <column xsi:type="float" name="price" nullable="false" comment="Price"/>
+        <column xsi:type="timestamp" name="created_at" comment="Created at"/>
+        <column xsi:type="timestamp" name="updated_at" comment="Updated at"/>
+        <column xsi:type="varchar" name="property_type_title" nullable="false" length="255" />
+        <column xsi:type="varchar" name="property_type_description" nullable="false" length="255" />
+        <column xsi:type="timestamp" name="property_type_created_at" comment="Property Created at" />
+        <column xsi:type="timestamp" name="property_type_updated_at" comment="Property Updated at" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="custom_entity_id"/>
+        </constraint>
+    </table>
+</schema>

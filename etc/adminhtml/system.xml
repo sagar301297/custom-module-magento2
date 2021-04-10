@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="sagar_tabs" translate="label" sortOrder="300">
+            <label>Sagar</label>
+        </tab>
+        <section id="sagardata" translate="label" type="text" sortOrder="1009" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Grid Configuration</label>
+            <tab>sagar_tabs</tab>
+            <resource>Sagar_Custom::config</resource>
+            <group id="customdata" translate="label" type="text" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="api_key" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
+                </field>
+                <field id="page_number" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <validate>validate-number</validate>
+                    <label>Page Number</label>
+                </field>
+                <field id="page_size" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <validate>validate-number</validate>
+                    <label>Page Size</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

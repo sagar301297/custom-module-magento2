@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Sagar Parikh, All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Sagar_Custom::sagar" title="Sagar" translate="title" module="Sagar_Custom" sortOrder="60" resource="Sagar_Custom::sagar" />
+        <add action="custom/action/index" id="Sagar_Custom::sagar_custom_module_grid" module="Sagar_Custom" parent="Sagar_Custom::sagar" resource="Magento_Backend::content" sortOrder="10" title="Custom Grid"/>
+        <add id="Sagar_Custom::sagar_configuration" title="Configuration" module="Sagar_Custom" sortOrder="30" parent="Sagar_Custom::sagar" action="adminhtml/system_config/edit/section/sagardata" resource="Sagar_Custom::config"/>
+    </menu>
+</config>
+
