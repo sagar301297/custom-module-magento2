@@ -11,6 +11,12 @@
       "email": "sagar.parikh69@gmail.com"
     }
   ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://github.com/sagar301297/custom-module-magento2"
+    }
+  ],
   "autoload": {
     "files": [
       "registration.php"
