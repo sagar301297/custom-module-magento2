@@ -5,10 +5,6 @@
   "type": "magento2-module",
   "version": "1.0.0",
   "license": "GPL-3.0-or-later",
-  "require": {
-    "php": "~7.2.0||~7.3.0",
-    "magento/framework": "~100.0.4"
-  },
   "authors": [
     {
       "name": "Sagar Parikh",
@@ -19,6 +15,10 @@
     {
       "type": "composer",
       "url": "https://github.com/sagar301297/custom-module-magento2"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:sagar301297/custom-module-magento2.git"
     }
   ],
   "autoload": {

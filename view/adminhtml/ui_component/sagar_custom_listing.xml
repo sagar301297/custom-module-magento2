@@ -11,6 +11,7 @@
     <settings>
         <buttons>
             <button name="CustomButton" class="Sagar\Custom\Block\Adminhtml\CustomButton"/>
+            <button name="ImportProducts" class="Sagar\Custom\Block\Adminhtml\ImportProductsButton"/>
         </buttons>
         <spinner>custom_columns</spinner>
         <deps>

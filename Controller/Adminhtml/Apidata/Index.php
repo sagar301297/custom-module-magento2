@@ -58,30 +58,35 @@ class Index extends Action
             // EXECUTE:
             $result = curl_exec($curl);
             $responses = json_decode($result, true);
-            foreach ($responses['data'] as $respons) {
-                $model = $this->customDataFactory->create();
-                $getCollection = $model->getCollection()->addFieldToFilter('uuid', $respons['uuid']);
-                $customfirstitem = $getCollection->getFirstItem();
-                if (!empty($customfirstitem->getData())) {
-                    $respons['property_type_title'] = $respons['property_type']['title'];
-                    $respons['property_type_description'] = $respons['property_type']['description'];
-                    $respons['property_type_created_at'] = $respons['property_type']['created_at'];
-                    $respons['property_type_updated_at'] = $respons['property_type']['updated_at'];
-                    $model->load($customfirstitem->getId());
-                    $model->setData($respons);
-                    $model->setId($customfirstitem->getId());
-                    $model->save();
-                } else {
-                    $respons['property_type_title'] = $respons['property_type']['title'];
-                    $respons['property_type_description'] = $respons['property_type']['description'];
-                    $respons['property_type_created_at'] = $respons['property_type']['created_at'];
-                    $respons['property_type_updated_at'] = $respons['property_type']['updated_at'];
-                    $model->setData($respons);
-                    $model->save();
+            if ($responses['data']) {
+                foreach ($responses['data'] as $respons) {
+                    $model = $this->customDataFactory->create();
+                    $getCollection = $model->getCollection()->addFieldToFilter('uuid', $respons['uuid']);
+                    $customfirstitem = $getCollection->getFirstItem();
+                    if (!empty($customfirstitem->getData())) {
+                        $respons['property_type_title'] = $respons['property_type']['title'];
+                        $respons['property_type_description'] = $respons['property_type']['description'];
+                        $respons['property_type_created_at'] = $respons['property_type']['created_at'];
+                        $respons['property_type_updated_at'] = $respons['property_type']['updated_at'];
+                        $model->load($customfirstitem->getId());
+                        $model->setData($respons);
+                        $model->setId($customfirstitem->getId());
+                        $model->save();
+                    } else {
+                        $respons['property_type_title'] = $respons['property_type']['title'];
+                        $respons['property_type_description'] = $respons['property_type']['description'];
+                        $respons['property_type_created_at'] = $respons['property_type']['created_at'];
+                        $respons['property_type_updated_at'] = $respons['property_type']['updated_at'];
+                        $model->setData($respons);
+                        $model->save();
+                    }
                 }
+                $this->messageManager->addSuccess(__("Successfully imported Custom Data"));
+                $this->_redirect('custom/action/');
+            } else {
+                $this->messageManager->addError(__("No Data Found"));
+                $this->_redirect('custom/action/');
             }
-            $this->messageManager->addSuccess(__("Successfully imported Custom Data"));
-            $this->_redirect('custom/action/');
         } catch (\Zend\Http\Exception\RuntimeException $runtimeException) {
             echo $runtimeException->getMessage();
         }
