@@ -57,8 +57,6 @@ class Index extends Action
                         $product->setName($collection->getPropertyTypeTitle().' , '.$collection->getTown()); // Name of Product
                         $product->setPrice($collection->getPrice());
                         $product->setWebsiteIds([1]);
-                        $product->setImage($collection->getImageFull());
-                        $product->setSmallImage($collection->getImageThumbnail());
                         $imagePath = "https://www.google.co.in/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"; // path of the image
                         // I am adding Google image for reference because url from API not showing images
                         // $imagePath = $collection->getImageFull()
